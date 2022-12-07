@@ -22,9 +22,6 @@ class Directory:
             self.size = sum(map(Directory.get_size, self.subdirs.values())) + sum(self.files.values())
         return self.size
 
-    def get_small_subdirs(self):
-        return (subdir for subdir in subdirs if subdir.get_size() <= 100000)
-
 with open("input.txt", encoding="utf-8") as input:
     root_dir = Directory(None)
     current_dir = root_dir
